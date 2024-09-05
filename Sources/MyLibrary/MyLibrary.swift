@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 import SwiftUI
-import shared
+//import shared
 
 public struct MatrixGettingStartedView: View {
     public init(){}
@@ -11,31 +11,32 @@ public struct MatrixGettingStartedView: View {
     @State private var inProgress : Bool = false
     
    public var body: some View {
-        VStack(alignment : .center){
-            Button( action: {
-                Task {
-                    inProgress.toggle()
-                    MatrixManager().login(server : "matrix.org",
-                                          username : "{UserName}",
-                                          password : "{Password}") {  id , error in
-                        if let deviceId = id {
-                            self.deviceId = deviceId
-                        }
-                        inProgress.toggle()
-
-                    }
-                }
-            },label: {
-                if(inProgress){
-                    ProgressView()
-                }else{
-                   Text("Check SDK")
-                }
-            })
-            
-            Text(deviceId ?? "null")
-                .padding(.top,10)
-        }
+       Text("Sample data")
+//        VStack(alignment : .center){
+//            Button( action: {
+//                Task {
+//                    inProgress.toggle()
+//                    MatrixManager().login(server : "matrix.org",
+//                                          username : "{UserName}",
+//                                          password : "{Password}") {  id , error in
+//                        if let deviceId = id {
+//                            self.deviceId = deviceId
+//                        }
+//                        inProgress.toggle()
+//
+//                    }
+//                }
+//            },label: {
+//                if(inProgress){
+//                    ProgressView()
+//                }else{
+//                   Text("Check SDK")
+//                }
+//            })
+//            
+//            Text(deviceId ?? "null")
+//                .padding(.top,10)
+//        }
     }
 }
 
